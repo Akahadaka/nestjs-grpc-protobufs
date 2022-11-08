@@ -7,6 +7,7 @@ package app;
 service AppController {
   // Declare an rpc for each method that is called via gRPC
   rpc Sum (NumberArray) returns (SumOfNumberArray);
+  rpc Pdf (FilenameArray) returns (ConcatFilenameArray);
 }
 
 // Declare the types used above
@@ -15,4 +16,10 @@ message NumberArray {
 }
 message SumOfNumberArray {
   double sum = 1;
+}
+message FilenameArray {
+  repeated string filename = 1;
+}
+message ConcatFilenameArray {
+  string filename = 1;
 }
